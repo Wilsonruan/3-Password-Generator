@@ -8,7 +8,7 @@
   <title>Password Generator</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  
+
 </head>
 
 <body>
@@ -22,8 +22,9 @@
         <textarea class="form-control input-textarea text-center" style="min-height: 120px;" id="password"
           placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
         <br>
-        <button type="button" class="btn-lg btn-danger rounded float-left" id="generate">Generate Password</button>
-        <button type="button" class="btn-lg btn-secondary rounded float-right" id="copy" onclick="myFunction()">Copy to Clipboard</button>
+        <button type="button" class="btn-lg btn-danger rounded float-left" id="generate" onclick="myGeneratePassword()">Generate Password</button>
+        <button type="button" class="btn-lg btn-secondary rounded float-right" id="copy" onclick="myCopyFunction()">Copy to
+          Clipboard</button>
       </div>
     </div>
   </div>
