@@ -5,16 +5,16 @@ function myCopyFunction() {
     document.execCommand("copy");
 }
 
-function myGeneratePassword(){
- 
+function myGeneratePassword() {
+
     let exitNow = false;
     let values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-    let password ="";  
+    let password = "";
 
     while (exitNow == false) {
         let length = Math.floor(Math.random() * (128 - 8)) + 8;
-        for(var i = 1; i <=length; i++){
-            password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length -1)));
+        for (var i = 1; i <= length; i++) {
+            password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
         }
         let passwordCheck = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
         let result = passwordCheck.test(password);
@@ -25,5 +25,5 @@ function myGeneratePassword(){
     }
     document.getElementById("password").value = password;
 
-    
+
 }
