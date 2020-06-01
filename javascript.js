@@ -6,12 +6,11 @@ function myCopyFunction() {
 }
 
 function myGeneratePassword(){
-    let values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!"
+    let values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()"
     let length = Math.floor(Math.random() * (128 - 8)) + 8;
     let password ="";
     for(var i = 0; i <=length-1; i++){
         password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length -1)));
     }
     document.getElementById("password").value = password;
-    console.log(length)
 }
