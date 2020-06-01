@@ -12,7 +12,7 @@ function myGeneratePassword(){
     let password ="";  
 
     while (exitNow == false) {
-        let length = Math.floor(Math.random() * (12 - 8)) + 8;
+        let length = Math.floor(Math.random() * (128 - 8)) + 8;
         for(var i = 1; i <=length; i++){
             password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length -1)));
         }
