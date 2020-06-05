@@ -18,12 +18,12 @@ function myGeneratePassword() {
         }
         let passwordCheck = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
         let result = passwordCheck.test(password);
+        console.log(result)
         exitNow = result;
         console.log(exitNow);
         console.log(password);
         console.log(length);
     }
     document.getElementById("password").value = password;
-
 
 }
