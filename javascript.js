@@ -1,5 +1,6 @@
+var copyText = document.getElementById("password");
+
 function myCopyFunction() {
-    var copyText = document.getElementById("password");
     copyText.select();
     copyText.setSelectionRange(0, 99999)
     document.execCommand("copy");
@@ -21,5 +22,5 @@ function myGeneratePassword() {
         exitNow = result;
     }
     document.getElementById("password").value = password;
-
+    copyText.classList.remove('text-center')
 }
