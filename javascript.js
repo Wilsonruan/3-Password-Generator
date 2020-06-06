@@ -7,7 +7,7 @@ checkNumber()
 
 function checkNumber (){
     length = prompt("Please indicate the length of password. Must enter a number between 8 to 128.","8");
-    if (length < 7 && length > 129) {
+    if (7 > length > 129) {
         checkNumber()
     }
 }
