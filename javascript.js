@@ -1,7 +1,6 @@
-var copyText = document.getElementById("password");
+var copyText = document.getElementById('password');
 var length = 0;
 var password = "";
-
 var checkCharacters = document.getElementById('checkCharacters'); 
 
 checkNumber();
@@ -24,7 +23,7 @@ function myCopyFunction() {
 
 function myGeneratePassword() {
     var values = "";
-    var allVales = [" !#$%&'()*+,-./:;<=>?@[\]^_`{|}~", "1234567890", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+    var allVales = [" !#$%&'()*+,-./:;<>?@[\]^_`{|}~=", "1234567890", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
     var passwordCheck = [/(?=.*\W)/, /(?=.*\d)/, /(?=.*[a-z])/, /(?=.*[A-Z])/];
     var result = false;
     password = "";
