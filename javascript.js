@@ -4,7 +4,7 @@ var password = "";
 
 var checkCharacters = document.getElementById('checkCharacters'); 
 
-checkNumber()
+checkNumber();
 
 function checkNumber (){
     length = prompt("Please indicate the length of password. Must enter a number between 8 to 128.","8");
@@ -12,7 +12,7 @@ function checkNumber (){
     if (8 <= length && length <= 128) {
 
     } else {
-        checkNumber()
+        checkNumber();
     }
 }
 
