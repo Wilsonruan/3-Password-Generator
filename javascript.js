@@ -1,6 +1,10 @@
 var copyText = document.getElementById("password");
 var length = 0
 
+var specialCharacters = document.getElementById('special-characters') 
+var numericCharacters = document.getElementById('numeric-characters') 
+var lowercaseCharacters = document.getElementById('lowercase-characters') 
+var uppercaseCharacters = document.getElementById('uppercase-characters') 
 
 checkNumber()
 
@@ -35,6 +39,10 @@ function myGeneratePassword() {
         exitNow = result;
         console.log(length)
         console.log(exitNow)
+        console.log(specialCharacters)
+        console.log(numericCharacters)
+        console.log(lowercaseCharacters)
+        console.log(uppercaseCharacters)
     }
     document.getElementById("password").value = password;
     copyText.classList.remove('text-center')
