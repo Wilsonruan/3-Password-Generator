@@ -1,4 +1,19 @@
 var copyText = document.getElementById("password");
+var length = 8
+
+
+checkNumber()
+
+function checkNumber (){
+    length = prompt("Please indicate the length of password. Must enter a number between 8 to 128.","8");
+    if (length > 7 && length < 129) {
+        console.log(length)
+    } else {
+        checkNumber()
+    }
+}
+
+
 
 function myCopyFunction() {
     copyText.select();
@@ -13,7 +28,7 @@ function myGeneratePassword() {
     let password = "";
 
     while (exitNow == false) {
-        let length = Math.floor(Math.random() * (128 - 8)) + 8;
+        // length = Math.floor(Math.random() * (128 - 8)) + 8;
         for (var i = 1; i <= length; i++) {
             password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
         }
