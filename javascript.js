@@ -1,18 +1,13 @@
 var copyText = document.getElementById("password");
 var length = 0
 
-var specialCharacters = document.getElementById('special-characters') 
-var numericCharacters = document.getElementById('numeric-characters') 
-var lowercaseCharacters = document.getElementById('lowercase-characters') 
-var uppercaseCharacters = document.getElementById('uppercase-characters') 
+var checkCharacters = document.getElementById('checkCharacters') 
 
 checkNumber()
 
 function checkNumber (){
     length = prompt("Please indicate the length of password. Must enter a number between 8 to 128.","8");
-    if (length > 7 && length < 129) {
-        console.log(length)
-    } else {
+    if (length < 7 && length > 129) {
         checkNumber()
     }
 }
@@ -37,12 +32,10 @@ function myGeneratePassword() {
         let passwordCheck = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
         let result = passwordCheck.test(password);
         exitNow = result;
-        console.log(length)
-        console.log(exitNow)
-        console.log(specialCharacters)
-        console.log(numericCharacters)
-        console.log(lowercaseCharacters)
-        console.log(uppercaseCharacters)
+        console.log(checkCharacters.children[0].children[0].checked)
+        console.log(checkCharacters.children[1].children[0].checked)
+        console.log(checkCharacters.children[2].children[0].checked)
+        console.log(checkCharacters.children[3].children[0].checked)
     }
     document.getElementById("password").value = password;
     copyText.classList.remove('text-center')
