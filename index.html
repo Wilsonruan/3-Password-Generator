@@ -22,11 +22,24 @@
         <textarea class="form-control input-textarea text-center" style="min-height: 120px;" readonly id="password"
           placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
         <br>
-          <button type="button" class="btn-lg btn-danger float-sm-left justify-content-center" id="generate" onclick="myGeneratePassword()">Generate Password</button>
-          <button type="button" class="btn-lg btn-secondary float-sm-right justify-content-center" id="copy" onclick="myCopyFunction()">Copy to Clipboard</button>
+        <button type="button" class="btn-lg btn-danger float-sm-left justify-content-center" id="generate"
+          onclick="myGeneratePassword()">Generate Password</button>
+        <button type="button" class="btn-lg btn-secondary float-sm-right justify-content-center" id="copy"
+          onclick="myCopyFunction()">Copy to Clipboard</button>
       </div>
     </div>
-  </div>
+    <form action="">
+      <label>
+        <input name="user-recommend" value="special-characters" type="radio" class="input-radio" />Special Characters</label>
+      <label>
+        <input name="user-recommend" value="numeric-characters" type="radio" class="input-radio" />Numeric Characters</label>
+      <label>
+        <input name="user-recommend" value="lowercase-characters" type="radio" class="input-radio" />Lowercase Characters</label>
+      <label>
+        <input name="user-recommend" value="uppercase-characters" type="radio" class="input-radio" />Uppercase Characters</label>
+    </div>
+    </form>
+
   <script type="text/javascript" src="javascript.js"></script>
 
 </body>
