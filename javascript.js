@@ -1,5 +1,5 @@
 var copyText = document.getElementById("password");
-var length = 8
+var length = 0
 
 
 checkNumber()
@@ -13,8 +13,6 @@ function checkNumber (){
     }
 }
 
-
-
 function myCopyFunction() {
     copyText.select();
     copyText.setSelectionRange(0, 99999)
@@ -26,8 +24,8 @@ function myGeneratePassword() {
     let exitNow = false;
     let values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
     let password = "";
-
     while (exitNow == false) {
+        password = "";
         // length = Math.floor(Math.random() * (128 - 8)) + 8;
         for (var i = 1; i <= length; i++) {
             password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
@@ -35,6 +33,8 @@ function myGeneratePassword() {
         let passwordCheck = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
         let result = passwordCheck.test(password);
         exitNow = result;
+        console.log(length)
+        console.log(exitNow)
     }
     document.getElementById("password").value = password;
     copyText.classList.remove('text-center')
