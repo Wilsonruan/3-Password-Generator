@@ -20,11 +20,20 @@ function myCopyFunction() {
 
 function myGeneratePassword() {
 
-    let exitNow = false;
-    let values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-    let password = "";
+    var exitNow = false
+    var values = ""
+    var password = ""
+    var allVales = [" !#$%&'()*+,-./:;<=>?@[\]^_`{|}~", "1234567890", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
     
-    while (exitNow == false) {
+    for (var i = 0; i < allVales.length; i++) {
+        if (checkCharacters.children[i].children[0].checked) {
+            values = values + allVales[i]
+        }
+    }
+    
+    console.log(values)
+
+    // while (exitNow == false) {
         password = "";
         for (var i = 1; i <= length; i++) {
             password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
@@ -32,11 +41,7 @@ function myGeneratePassword() {
         let passwordCheck = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
         let result = passwordCheck.test(password);
         exitNow = result;
-        console.log(checkCharacters.children[0].children[0].checked)
-        console.log(checkCharacters.children[1].children[0].checked)
-        console.log(checkCharacters.children[2].children[0].checked)
-        console.log(checkCharacters.children[3].children[0].checked)
-    }
+    // }
     document.getElementById("password").value = password;
     copyText.classList.remove('text-center')
 }
