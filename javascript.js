@@ -1,14 +1,18 @@
-var checkCharacters = document.getElementById('checkCharacters'); 
 var copyText = document.getElementById("password");
 var length = 0;
 var password = "";
 
-checkNumber();
+var checkCharacters = document.getElementById('checkCharacters'); 
+
+checkNumber()
 
 function checkNumber (){
     length = prompt("Please indicate the length of password. Must enter a number between 8 to 128.","8");
-    if (7 > length > 129) {
-        checkNumber();
+    
+    if (8 <= length && length <= 128) {
+
+    } else {
+        checkNumber()
     }
 }
 
