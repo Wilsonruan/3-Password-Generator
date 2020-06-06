@@ -1,47 +1,50 @@
+var checkCharacters = document.getElementById('checkCharacters'); 
 var copyText = document.getElementById("password");
-var length = 0
+var length = 0;
+var password = "";
 
-var checkCharacters = document.getElementById('checkCharacters') 
-
-checkNumber()
+checkNumber();
 
 function checkNumber (){
     length = prompt("Please indicate the length of password. Must enter a number between 8 to 128.","8");
     if (7 > length > 129) {
-        checkNumber()
+        checkNumber();
     }
 }
 
 function myCopyFunction() {
     copyText.select();
-    copyText.setSelectionRange(0, 99999)
+    copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
 }
 
 function myGeneratePassword() {
-
-    var exitNow = false
-    var values = ""
-    var password = ""
-    var allVales = [" !#$%&'()*+,-./:;<=>?@[\]^_`{|}~", "1234567890", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
-    
+    var values = "";
+    var allVales = [" !#$%&'()*+,-./:;<=>?@[\]^_`{|}~", "1234567890", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+    var passwordCheck = [/(?=.*\W)/, /(?=.*\d)/, /(?=.*[a-z])/, /(?=.*[A-Z])/];
+    var result = false;
+    password = "";
     for (var i = 0; i < allVales.length; i++) {
         if (checkCharacters.children[i].children[0].checked) {
-            values = values + allVales[i]
+            values = values + allVales[i];
         }
     }
-    
-    console.log(values)
 
-    // while (exitNow == false) {
-        password = "";
-        for (var i = 1; i <= length; i++) {
-            password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
+    for (var i = 1; i <= length; i++) {
+        password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
+    }
+
+    for (var i = 0; i < allVales.length; i++) {
+        if (checkCharacters.children[i].children[0].checked) {
+            if (result = passwordCheck[i].test(password)) {
+                console.log("Password works:" + password)
+            } else {
+                console.log("Password did not work:" + password)
+                myGeneratePassword();
+            }
         }
-        let passwordCheck = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
-        let result = passwordCheck.test(password);
-        exitNow = result;
-    // }
-    document.getElementById("password").value = password;
-    copyText.classList.remove('text-center')
+    }
+
+    copyText.value = password;
+    copyText.classList.remove('text-center'); 
 }
