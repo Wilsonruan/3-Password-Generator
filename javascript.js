@@ -20,8 +20,10 @@ function promptCharacter() {
 
     for (var i = 0; i < arrayCharacters.length; i++) {
         arrayCharacters[i] = confirm("Would you like " + arrayCharacters[i] + " Characters? If not, please enter cancel.");
+        if (arrayCharacters[i]) {
+            checkCharacters.children[i].children[0].setAttribute('checked', 'checked')
+        }
     }
-    console.log(arrayCharacters)
 }
 
 function myCopyFunction() {
