@@ -19,7 +19,7 @@ function promptNumber() {
 function promptCharacter() {
 
     for (var i = 0; i < arrayCharacters.length; i++) {
-        arrayCharacters[i] = confirm("Would you like " + arrayCharacters[i] + " Characters? If not, please enter cancel.");
+        arrayCharacters[i] = confirm("Would you like " + arrayCharacters[i] + " Characters? If not, please click cancel.");
         if (arrayCharacters[i]) {
             checkCharacters.children[i].children[0].setAttribute('checked', 'checked')
         }
