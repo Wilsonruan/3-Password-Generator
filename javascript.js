@@ -1,7 +1,7 @@
 var copyText = document.getElementById('password');
 var length = 0;
 var password = "";
-var checkCharacters = document.getElementById('check-characters'); 
+var checkCharacters = document.getElementById('check-characters');
 var arrayCharacters = ['Special', 'Numeric', 'Lowercase', 'Uppercase']
 
 promptNumber();
@@ -9,15 +9,14 @@ promptNumber();
 promptCharacter();
 
 function promptNumber() {
-    length = prompt("Please indicate the length of password. Must enter a number between 8 to 128.","8");
-    
+    length = prompt("Please indicate the length of password. Must enter a number between 8 to 128.", "8");
+
     if (!(8 <= length && length <= 128)) {
         promptNumber();
     }
 }
 
 function promptCharacter() {
-
     for (var i = 0; i < arrayCharacters.length; i++) {
         arrayCharacters[i] = confirm("Would you like " + arrayCharacters[i] + " Characters? If not, please click cancel.");
         if (arrayCharacters[i]) {
@@ -60,5 +59,5 @@ function myGeneratePassword() {
     }
 
     copyText.value = password;
-    copyText.classList.remove('text-center'); 
+    copyText.classList.remove('text-center');
 }
