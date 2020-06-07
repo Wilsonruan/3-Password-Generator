@@ -1,7 +1,8 @@
 var copyText = document.getElementById('password');
 var length = 0;
 var password = "";
-var checkCharacters = document.getElementById('checkCharacters'); 
+var checkCharacters = document.getElementById('check-characters'); 
+var arrayCharacters = ['Special', 'Numeric', 'Lowercase', 'Uppercase']
 
 promptNumber();
 
@@ -16,10 +17,11 @@ function promptNumber() {
 }
 
 function promptCharacter() {
-    confirm("Would you like Special Characters? If not, please enter cancel.");
-    confirm("Would you like Numeric Characters? If not, please enter cancel.");
-    confirm("Would you like Lowercase Characters? If not, please enter cancel.");
-    confirm("Would you like Uppercase Characters? If not, please enter cancel.");
+
+    for (var i = 0; i < arrayCharacters.length; i++) {
+        arrayCharacters[i] = confirm("Would you like " + arrayCharacters[i] + " Characters? If not, please enter cancel.");
+    }
+    console.log(arrayCharacters)
 }
 
 function myCopyFunction() {
