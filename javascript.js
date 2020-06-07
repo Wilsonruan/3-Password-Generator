@@ -5,14 +5,21 @@ var checkCharacters = document.getElementById('checkCharacters');
 
 promptNumber();
 
-// promptCharacter();
+promptCharacter();
 
-function promptNumber (){
+function promptNumber() {
     length = prompt("Please indicate the length of password. Must enter a number between 8 to 128.","8");
     
     if (!(8 <= length && length <= 128)) {
         promptNumber();
     }
+}
+
+function promptCharacter() {
+    confirm("Would you like Special Characters? If not, please enter cancel.");
+    confirm("Would you like Numeric Characters? If not, please enter cancel.");
+    confirm("Would you like Lowercase Characters? If not, please enter cancel.");
+    confirm("Would you like Uppercase Characters? If not, please enter cancel.");
 }
 
 function myCopyFunction() {
