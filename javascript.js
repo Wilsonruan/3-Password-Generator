@@ -17,11 +17,17 @@ function promptNumber() {
 }
 
 function promptCharacter() {
+    var ensureAtLeastOne = false;
     for (var i = 0; i < arrayCharacters.length; i++) {
         arrayCharacters[i] = confirm("Would you like " + arrayCharacters[i] + " Characters? If not, please click cancel.");
         if (arrayCharacters[i]) {
-            checkCharacters.children[i].children[0].setAttribute('checked', 'checked')
+            checkCharacters.children[i].children[0].setAttribute('checked', 'checked');
+            ensureAtLeastOne = true;
         }
+    }
+    if (!(ensureAtLeastOne)) {
+        alert("Please select at least one character type!");
+        promptCharacter();
     }
 }
 
@@ -42,11 +48,9 @@ function myGeneratePassword() {
             values = values + allVales[i];
         }
     }
-
     for (var i = 1; i <= length; i++) {
         password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
     }
-
     for (var i = 0; i < allVales.length; i++) {
         if (checkCharacters.children[i].children[0].checked) {
             if (result = passwordCheck[i].test(password)) {
@@ -57,7 +61,6 @@ function myGeneratePassword() {
             }
         }
     }
-
     copyText.value = password;
     copyText.classList.remove('text-center');
 }
