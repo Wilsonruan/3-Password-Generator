@@ -5,12 +5,10 @@ var checkCharacters = document.getElementById('check-characters');
 var arrayCharacters = ['Special', 'Numeric', 'Lowercase', 'Uppercase']
 
 promptNumber();
-
 promptCharacter();
 
 function promptNumber() {
     length = prompt("Please indicate the length of password. Must enter a number between 8 to 128.", "8");
-
     if (!(8 <= length && length <= 128)) {
         promptNumber();
     }
@@ -27,6 +25,7 @@ function promptCharacter() {
     }
     if (!(ensureAtLeastOne)) {
         alert("Please select at least one character type!");
+        arrayCharacters = ['Special', 'Numeric', 'Lowercase', 'Uppercase']
         promptCharacter();
     }
 }
