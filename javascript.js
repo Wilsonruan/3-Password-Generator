@@ -10,6 +10,7 @@ promptCharacter();
 function promptNumber() {
     length = prompt("Please indicate the length of password. Must enter a number between 8 to 128.", "8");
     if (!(8 <= length && length <= 128)) {
+        alert("Please select a number between 8 to 128.");
         promptNumber();
     }
 }
@@ -40,7 +41,7 @@ function myGeneratePassword() {
     var values = "";
     var allVales = [" !#$%&'()*+,-./:;<>?@[\]^_`{|}~=", "1234567890", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
     var passwordCheck = [/(?=.*\W)/, /(?=.*\d)/, /(?=.*[a-z])/, /(?=.*[A-Z])/];
-    var result = false;
+    // var result = false;
     password = "";
     for (var i = 0; i < allVales.length; i++) {
         if (checkCharacters.children[i].children[0].checked) {
@@ -52,12 +53,17 @@ function myGeneratePassword() {
     }
     for (var i = 0; i < allVales.length; i++) {
         if (checkCharacters.children[i].children[0].checked) {
-            if (result = passwordCheck[i].test(password)) {
-                console.log("Password works:" + password)
-            } else {
+            if (!passwordCheck[i].test(password)) {
                 console.log("Password did not work:" + password)
                 myGeneratePassword();
             }
+
+            // if (result = passwordCheck[i].test(password)) {
+            //     console.log("Password works:" + password)
+            // } else {
+            //     console.log("Password did not work:" + password)
+            //     myGeneratePassword();
+            // }
         }
     }
     copyText.value = password;
