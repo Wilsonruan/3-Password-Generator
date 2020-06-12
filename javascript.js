@@ -54,16 +54,8 @@ function myGeneratePassword() {
     for (var i = 0; i < allVales.length; i++) {
         if (checkCharacters.children[i].children[0].checked) {
             if (!passwordCheck[i].test(password)) {
-                console.log("Password did not work:" + password)
                 myGeneratePassword();
             }
-
-            // if (result = passwordCheck[i].test(password)) {
-            //     console.log("Password works:" + password)
-            // } else {
-            //     console.log("Password did not work:" + password)
-            //     myGeneratePassword();
-            // }
         }
     }
     copyText.value = password;
