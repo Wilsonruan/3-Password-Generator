@@ -2,7 +2,6 @@ var copyText = document.getElementById('password');
 var length = 0;
 var password = "";
 var checkCharacters = document.getElementById('check-characters');
-var arrayCharacters = ['Special', 'Numeric', 'Lowercase', 'Uppercase']
 
 promptNumber();
 promptCharacter();
@@ -16,6 +15,7 @@ function promptNumber() {
 }
 
 function promptCharacter() {
+    var arrayCharacters = ['Special', 'Numeric', 'Lowercase', 'Uppercase']
     var ensureAtLeastOne = false;
     for (var i = 0; i < arrayCharacters.length; i++) {
         arrayCharacters[i] = confirm("Would you like " + arrayCharacters[i] + " Characters? If not, please click cancel.");
@@ -26,7 +26,6 @@ function promptCharacter() {
     }
     if (!(ensureAtLeastOne)) {
         alert("Please select at least one character type!");
-        arrayCharacters = ['Special', 'Numeric', 'Lowercase', 'Uppercase']
         promptCharacter();
     }
 }
@@ -41,7 +40,6 @@ function myGeneratePassword() {
     var values = "";
     var allVales = [" !#$%&'()*+,-./:;<>?@[\]^_`{|}~=", "1234567890", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
     var passwordCheck = [/(?=.*\W)/, /(?=.*\d)/, /(?=.*[a-z])/, /(?=.*[A-Z])/];
-    // var result = false;
     password = "";
     for (var i = 0; i < allVales.length; i++) {
         if (checkCharacters.children[i].children[0].checked) {
