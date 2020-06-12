@@ -16,19 +16,21 @@ Password Generator prompt the following:
 
   * "Would you like Uppercase Characters? If not, please click cancel."
 
-If user doesn't select at least one character type, an alert "Please select at least one character type!" and then return to prompt the characters types.
+The user must enter a number between 8 - 128.  Anything else, will alert ("Please select at least one character type!") and then prompt ("Please indicate the length of password. Must enter a number between 8 to 128.".
+
+The user must at least one character type. If not, an alert "Please select at least one character type!" and then return to prompt the characters types.
 
 # Generate Password Button
 
-The Generate Password will generate password on the page. User can click again to generate a different password. 
+The Generate Password will generate a password on the page. At least one of the checked character type(s) will be there. The user can click again to generate a different password.     
 
 # Copy to Clipboard
 
-The Copy to Clipboard button will copy the text inside the generator password box to clipboard.  The user can paste the password aftwards.
+The Copy to Clipboard button will copy the text inside the generator password box to clipboard. 
 
 # CheckBox below the buttons.
 
-User can change their selected character type by check or uncheck the checkboxes below the buttons. 
+Users can change their selected character type by checking or unchecking the checkboxes below the buttons. 
 
 # The URL of the deployed application
 
