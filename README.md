@@ -24,11 +24,11 @@ The user must at least one character type. If not, an alert "Please select at le
 
 The Generate Password will generate a password on the page. At least one of the checked character type(s) will be there. The user can click again to generate a different password.     
 
-# Copy to Clipboard
+# Copy to Clipboard Button
 
 The Copy to Clipboard button will copy the text inside the generator password box to clipboard. 
 
-# CheckBox below the buttons.
+# The CheckBoxes.
 
 Users can change their selected character type by checking or unchecking the checkboxes below the buttons. 
 
