@@ -41,14 +41,17 @@ function myGeneratePassword() {
     var allVales = ["!#$%&'()*+,-./:;<>?@[\]^_`{}~=", "123456789", "abcdefghijkmnpqrstuvwxyz", "ABCDEFGHJKLMNPQRSTUVWXYZ"];
     var passwordCheck = [/(?=.*\W)/, /(?=.*\d)/, /(?=.*[a-z])/, /(?=.*[A-Z])/];
     password = "";
+    // Loops selected values that are true.
     for (var i = 0; i < allVales.length; i++) {
         if (checkCharacters.children[i].children[0].checked) {
             values = values + allVales[i];
         }
     }
+    // Generates the new password.
     for (var i = 1; i <= length; i++) {
         password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
     }
+    // Checks password if it pass the users requirements. 
     for (var i = 0; i < allVales.length; i++) {
         if (checkCharacters.children[i].children[0].checked) {
             if (!passwordCheck[i].test(password)) {
