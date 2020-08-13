@@ -4,7 +4,7 @@ var password = "";
 var checkCharacters = document.getElementById('check-characters');
 
 promptNumber();
-promptCharacter();
+// promptCharacter();
 
 function promptNumber() {
     length = prompt("Please indicate the length of password. Must enter a number between 8 to 128.", "8");
@@ -14,21 +14,21 @@ function promptNumber() {
     }
 }
 
-function promptCharacter() {
-    var arrayCharacters = ['Special', 'Numeric', 'Lowercase', 'Uppercase']
-    var ensureAtLeastOne = false;
-    for (var i = 0; i < arrayCharacters.length; i++) {
-        arrayCharacters[i] = confirm("Would you like " + arrayCharacters[i] + " Characters? If not, please click cancel.");
-        if (arrayCharacters[i]) {
-            checkCharacters.children[i].children[0].setAttribute('checked', 'checked');
-            ensureAtLeastOne = true;
-        }
-    }
-    if (!(ensureAtLeastOne)) {
-        alert("Please select at least one character type!");
-        promptCharacter();
-    }
-}
+// function promptCharacter() {
+//     var arrayCharacters = ['Special', 'Numeric', 'Lowercase', 'Uppercase']
+//     var ensureAtLeastOne = false;
+//     for (var i = 0; i < arrayCharacters.length; i++) {
+//         arrayCharacters[i] = confirm("Would you like " + arrayCharacters[i] + " Characters? If not, please click cancel.");
+//         if (arrayCharacters[i]) {
+//             checkCharacters.children[i].children[0].setAttribute('checked', 'checked');
+//             ensureAtLeastOne = true;
+//         }
+//     }
+//     if (!(ensureAtLeastOne)) {
+//         alert("Please select at least one character type!");
+//         promptCharacter();
+//     }
+// }
 
 function myCopyFunction() {
     copyText.select();
