@@ -38,7 +38,7 @@ function myCopyFunction() {
 
 function myGeneratePassword() {
     var values = "";
-    var allVales = [" !#$%&'()*+,-./:;<>?@[\]^_`{|}~=", "1234567890", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+    var allVales = ["!#$%&'()*+,-./:;<>?@[\]^_`{}~=", "123456789", "abcdefghijkmnpqrstuvwxyz", "ABCDEFGHJKLMNPQRSTUVWXYZ"];
     var passwordCheck = [/(?=.*\W)/, /(?=.*\d)/, /(?=.*[a-z])/, /(?=.*[A-Z])/];
     password = "";
     for (var i = 0; i < allVales.length; i++) {
